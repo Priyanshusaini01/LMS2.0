@@ -23,13 +23,13 @@ export default function Navbar() {
       />
 
       <div className="hidden md:flex items-center gap-5 text-gray-500">
-        <div className="flex items-center gap-5">
-           {/*  if user there only show become educator and my enrollement  useinf <></>*/}
-          { user &&<>   
-          <button>Become Educator</button>
-          <Link to="/my-enrollment" className="ml-4">
-            My Enrollments
-          </Link>
+          <div className="flex items-center gap-5">
+            {/*  if user login then only show  educator and my enrollement using use  <></>*/}
+            { user &&<>   
+            <button>Become Educator</button>
+            <Link to="/my-enrollment" className="ml-4">
+              My Enrollments
+            </Link>
           </>
 }
         </div>
@@ -47,15 +47,19 @@ export default function Navbar() {
       </div>
       {/*for phone screen */}
       <div className="md:hidden flex items-center gap-2 sm:gap-5 text-gray-500">
-        <div>
-          <button>Become Educator</button>
-          <Link to="/my-enrollment" className="ml-4">
-            My Enrollments
-          </Link>
+        <div className='flex items-center gap-1 sm:gap-5 max-sm:text-xs'> 
+         { user &&<>   
+            <button>Become Educator</button>
+            <Link to="/my-enrollment" className="ml-4">
+              My Enrollments
+            </Link>
+          </>
+          }
         </div>
-        <button>
+        { user ? <UserButton/> :
+          <button onClick={()=> openSignIn()}>
           <img src={assets.user_icon} alt="" />
-        </button>
+        </button>}
       </div>
     </div>
   );
