@@ -12,6 +12,7 @@ import AddCourse from './pages/educator/AddCourse'
 import MyCourses from './pages/educator/MyCourses'
 import StudentEnrolled from './pages/educator/StudentEnrolled'
 import Navbar from './components/student/Navbar'
+// import Hero from './components/student/Hero'
 const App=()=> 
       {  
         const iseducator= useMatch('/educator/*') // if true then show educator navbar else student navbar
@@ -36,6 +37,7 @@ const App=()=>
             <Route path='my-courses' element ={<MyCourses/>}/>
             <Route path='student-enrolled' element ={<StudentEnrolled/>}/>
       </Route>
+        {/* <Route path='/hero-h' element={<Hero/>}/>  */}
 
      </Routes>
     </div>
