@@ -18,5 +18,5 @@ const Home = () => {
         </div>
   )
 }
-console.log("Home component rendered");
+// console.log("Home component rendered");
 export default Home

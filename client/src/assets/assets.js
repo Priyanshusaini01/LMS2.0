@@ -132,16 +132,17 @@ export const dummyDashboardData = {
             "courseTitle": "Introduction to JavaScript",
             "student": {
                 "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
-                "name": "Great Stack",
-                "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
+                "name": "Code With Harry ",
+                "imageUrl":"https://i.ytimg.com/vi/Pyv0tMm5i_w/maxresdefault.jpg",
+                "copied":"https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
             }
         },
         {
             "courseTitle": "Advanced Python Programming",
             "student": {
                 "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
-                "name": "Great Stack",
-                "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
+                "name": "Shreyansh coding",
+                "imageUrl": "https://thecodex.me/static/52b74df4524162e8807bea5fb094d53c/ee604/Python_Thumbnail_b6e99c74df.png"
             }
         },
         {
@@ -177,7 +178,8 @@ export const dummyStudentEnrolled = [
         "student": {
             "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
             "name": "GreatStack",
-            "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
+            "imageUrl":"https://i.ytimg.com/vi/Pyv0tMm5i_w/maxresdefault.jpg",
+            "copied":"https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ycVFsdmFMSkw3ckIxNHZMU2o4ZURWNEtmR2IifQ"
         },
         "courseTitle": "Introduction to JavaScript",
         "purchaseDate": "2024-12-20T08:39:55.509Z"
@@ -283,7 +285,7 @@ export const dummyCourses = [
         "createdAt": "2024-12-17T08:16:53.622Z",
         "updatedAt": "2025-01-02T04:47:44.701Z",
         "__v": 4,
-        "courseThumbnail": "https://img.youtube.com/vi/CBWnBi-awSA/maxresdefault.jpg"
+        "courseThumbnail": "https://i.ytimg.com/vi/Pyv0tMm5i_w/maxresdefault.jpg"
     },
     {
         "_id": "675ac1512100b91a6d9b8b24",
@@ -355,7 +357,7 @@ export const dummyCourses = [
         "createdAt": "2024-12-17T08:16:53.622Z",
         "updatedAt": "2025-01-02T06:47:54.446Z",
         "__v": 3,
-        "courseThumbnail": "https://img.youtube.com/vi/HdLIMoQkXFA/maxresdefault.jpg"
+        "courseThumbnail": "https://thecodex.me/static/52b74df4524162e8807bea5fb094d53c/ee604/Python_Thumbnail_b6e99c74df.png"
     },
     {
         "_id": "605c72efb3f1c2b1f8e4e1ae",
