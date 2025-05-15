@@ -3,14 +3,20 @@ import { dummyCourses } from "../assets/assets";
 import { useEffect  } from "react";
 import { useNavigate } from "react-router-dom";
 import humanizeDuration from "humanize-duration";
+import {useAuth,useUser} from "@clerk/clerk-react"
+import { use } from "react";
 // import {Coursecard  }
 
 export const AppContext = createContext();
 
 export const AppcontextProvider = (props)=>{
     const currency=import.meta.env.VITE_CURRENCY
-
+     const backendUrl = import.meta.env.VITE_BACKEND_URL
     const navigate= useNavigate();
+
+    const {getToken}=useAuth();
+    const {user}=useUser(); 
+     
 // calculate rating of course
     const calculateRating = (course) => {
 
@@ -70,7 +76,9 @@ export const AppcontextProvider = (props)=>{
       const [allCourses, setAllCourses] = useState([])
       const [isEducator,setIsEducator] = useState(true)
       const [enrolledCourses, setEnrolledCourses] = useState([])    // for enrolled courses
-
+             const [showLogin, setShowLogin] = useState(false)
+             const [userData, setUserData] = useState(null)
+         
 
       const fetchallcourses= async()=>{
          setAllCourses(dummyCourses)
@@ -80,7 +88,16 @@ export const AppcontextProvider = (props)=>{
           fetchallcourses()
           fetchUserEnrolledCourses()
         }, [])
-
+        
+        const logToken=async()=>{
+            console.log(await getToken())
+        }
+        // Log the token when the user changes
+        useEffect(() => {
+            if(user){   
+            logToken()
+            }
+        }, [user])
         const value={ // we can able to access this value in any component
             // Add your context values here
             currency,allCourses,navigate,calculateRating,

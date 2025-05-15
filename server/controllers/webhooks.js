@@ -6,6 +6,7 @@ import User from "../models/User.js";
 // API Controller Function to Manage Clerk User with database
 export const clerkWebhooks = async (req, res) => {
   try {
+    console.log('Received webhook request:', req.body);
 
     // Create a Svix instance with clerk webhook secret.
     const whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET)
@@ -19,11 +20,13 @@ export const clerkWebhooks = async (req, res) => {
 
     // Getting Data from request body
     const { data, type } = req.body
+    console.log('Webhook type:', type);
+    console.log('Webhook data:', data);
 
     // Switch Cases for differernt Events
     switch (type) {
       case 'user.created': {
-
+        console.log('Processing user.created event');
         const userData = {
           _id: data.id,
           email: data.email_addresses[0].email_address,
@@ -31,12 +34,15 @@ export const clerkWebhooks = async (req, res) => {
           imageUrl: data.image_url,
           resume: ''
         }
+        console.log('Creating user with data:', userData);
         await User.create(userData)
+        console.log('User created successfully');
         res.json({})
         break;
       }
 
       case 'user.updated': {
+        console.log('Processing user.updated event');
         const userData = {
           email: data.email_addresses[0].email_address,
           name: data.first_name + " " + data.last_name,
@@ -44,21 +50,26 @@ export const clerkWebhooks = async (req, res) => {
         }
         // Updating User Data From Clerk
         await User.findByIdAndUpdate(data.id, userData)
+        console.log('User updated successfully');
         res.json({})
         break;
       }
 
       case 'user.deleted': {
+        console.log('Processing user.deleted event');
         await User.findByIdAndDelete(data.id)
+        console.log('User deleted successfully');
         res.json({})
         break;
       }
       default:
+        console.log('Unhandled webhook type:', type);
         break;
     }
 
   } 
   catch (error) {
+    console.error('Webhook error:', error);
     res.json({ success: false, message: error.message })
   }
 }
