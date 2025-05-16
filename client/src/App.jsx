@@ -12,15 +12,16 @@ import AddCourse from './pages/educator/AddCourse'
 import MyCourses from './pages/educator/MyCourses'
 import StudentEnrolled from './pages/educator/StudentEnrolled'
 import Navbar from './components/student/Navbar'
+import CourseStructure from './components/educator/CourseStructure'
 import "quill/dist/quill.snow.css"
 // import Hero from './components/student/Hero'
 const App=()=> 
       {  
-        const iseducator= useMatch('/educator/*') // if true then show educator navbar else student navbar
+        const isEducator = useMatch('/educator/*') // if true then show educator navbar else student navbar
         return (
     <div className='text-default min-h-screen bg-white'>
      
-      { !iseducator && <Navbar/> } 
+      { !isEducator && <Navbar/> } 
  
      <Routes>
       <Route path='/' element={<Home/>} />
@@ -32,11 +33,13 @@ const App=()=>
       <Route  path='/player'  element= {<Player/>} />
       <Route  path='/player/:courseId'  element= {<Player/>} />
       <Route  path='/loading/:path'  element= {<Loading/>}/>
+      <Route path='/course-structure' element={<CourseStructure />} />
       <Route  path='/educator'  element= {<Educator/>} >
-            <Route path='/educator' element ={<Dashboard/>}/>
-            <Route path='add-course' element ={<AddCourse/>}/>
-            <Route path='my-courses' element ={<MyCourses/>}/>
-            <Route path='student-enrolled' element ={<StudentEnrolled/>}/>
+            <Route index element={<Dashboard />} />
+            <Route path='dashboard' element={<Dashboard />} />
+            <Route path='add-course' element={<AddCourse />} />
+            <Route path='my-courses' element={<MyCourses />} />
+            <Route path='student-enrolled' element={<StudentEnrolled />} />
       </Route>
         {/* <Route path='/hero-h' element={<Hero/>}/>  */}
 
