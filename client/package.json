@@ -12,6 +12,7 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.30.4",
     "axios": "^1.9.0",
+    "canvas-confetti": "^1.9.3",
     "framer-motion": "^12.10.5",
     "humanize-duration": "^3.32.1",
     "nodemon": "^3.1.10",
